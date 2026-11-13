@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#242335"><title>Calendário · FácilPost</title>
+<link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./" aria-label="FácilPost, início"><span class="brandmark" aria-hidden="true">F</span>Fácil<span>Post</span></a><span class="divider"></span><span class="product">Estúdio de publicações</span><button id="account" class="account" type="button"><span class="facebook" aria-hidden="true">f</span><span id="accountName">Conectar Facebook</span></button></header>
+<main>
+<div class="heading"><div><span class="eyebrow">PLANEJAMENTO</span><h1>Calendário de publicações</h1></div><button class="primary" id="newPost"><i data-icon="plus"></i> Criar publicação</button></div>
+<div id="message" class="notice" role="status" hidden></div>
+<section class="workspace" aria-label="Planejamento de publicações">
+<div class="board">
+<header class="boardheader"><div class="month-title"><span class="calendar-badge"><i data-icon="calendar"></i></span><h2 id="monthLabel"></h2></div><div class="nav"><button class="today" id="today">Hoje</button><button class="iconbtn" id="prev" aria-label="Mês anterior"><i data-icon="left"></i></button><button class="iconbtn" id="next" aria-label="Próximo mês"><i data-icon="right"></i></button></div></header>
+<div class="legend"><span><b class="dot planned"></b>Agendado</span><span><b class="dot published"></b>Publicado</span><span><b class="dot draft"></b>Rascunho</span></div>
+<div class="weekdays" aria-hidden="true"><span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span></div>
+<div id="calendar" class="calendar" role="group" aria-label="Dias do mês"></div>
+<footer class="boardfooter"><span id="monthCount"></span><span id="timezone"></span></footer>
+</div>
+<aside class="agenda" aria-label="Agenda do dia" id="agenda"><div class="agendaHeader"><span class="eyebrow">AGENDA DO DIA</span><h2 id="dayLabel"></h2><span id="dayFull"></span></div><div id="dayPosts"></div><button class="outline full" id="newDay"><i data-icon="plus"></i> Adicionar publicação</button></aside>
+</section>
+</main>
+<dialog id="editor"><form id="postForm"><header class="dialogHeader"><div><span class="eyebrow">PUBLICAÇÃO</span><h2 id="editorTitle">Criar publicação</h2></div><button type="button" class="iconbtn close" aria-label="Fechar"><i data-icon="close"></i></button></header>
+<div class="dialogBody"><label>Texto da publicação<textarea id="caption" rows="4" placeholder="O que você quer compartilhar?" maxlength="63206"></textarea></label>
+<div id="mediaControls"><label>Foto ou vídeo<input id="file" type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime"><small>JPG, PNG, WebP, MP4 ou MOV · até 64 MiB</small></label><button type="button" class="link" id="removeFile" hidden>Remover mídia</button></div>
+<div id="mediaPreview"></div><label id="dateLabel">Data e hora <input type="datetime-local" id="when" required></label>
+<div id="editorStatus" role="status" class="inlineStatus"></div></div>
+<footer class="editorActions"><button type="button" class="outline" id="saveDraft">Salvar rascunho</button><button type="button" class="outline" id="publish">Publicar agora</button><button class="primary" type="submit" id="schedule">Agendar</button></footer></form></dialog>
+<dialog id="pages"><header class="dialogHeader"><div><span class="eyebrow">FACEBOOK</span><h2>Minhas Páginas</h2></div><button type="button" class="iconbtn close" aria-label="Fechar"><i data-icon="close"></i></button></header><div class="dialogBody" id="pageList"></div></dialog>
+<dialog id="stats"><header class="dialogHeader"><h2>Métricas da publicação</h2><button type="button" class="iconbtn close" aria-label="Fechar"><i data-icon="close"></i></button></header><div id="statsBody" class="dialogBody"></div></dialog>
+<dialog id="confirm"><header class="dialogHeader"><h2>Excluir publicação?</h2></header><div class="dialogBody"><p id="confirmText"></p></div><footer class="editorActions"><button class="outline" id="cancelDelete">Cancelar</button><button class="danger" id="doDelete">Excluir publicação</button></footer></dialog>
+</body></html>
